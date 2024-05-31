@@ -1,3 +1,6 @@
 [submodule "taggers/pie/pie"]
 	path = taggers/pie/pie
 	url = https://github.com/INL/int-pie
+[submodule "galahad-corpus-data"]
+	path = galahad-corpus-data
+	url = https://github.com/INL/galahad-corpus-data
