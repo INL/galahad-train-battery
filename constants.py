@@ -1,0 +1,8 @@
+VERSION = "dev"
+CONFIGS: str = "configs"
+DATASETS: str = "galahad-corpus-data/training-data"
+TAGGERS: str = "taggers"
+DOCKER: str = "galahad-taggers-dockerized"
+PREFABS: str = "docker-prefabs"
+DOCKER_TAG_PREFIX: str = "instituutnederlandsetaal/taggers-dockerized-"
+LOGS: str = "logs"

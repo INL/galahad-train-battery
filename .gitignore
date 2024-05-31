@@ -1,0 +1,10 @@
+﻿.vscode
+__pycache__
+
+logs/
+
+taggers/*/*
+!taggers/*/train.py
+
+galahad-taggers-dockerized/*
+galahad-corpus-data/*

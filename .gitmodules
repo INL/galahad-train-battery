@@ -1,0 +1,3 @@
+[submodule "taggers/pie/pie"]
+	path = taggers/pie/pie
+	url = https://github.com/INL/int-pie
