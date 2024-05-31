@@ -1,12 +1,12 @@
-# galahad-train-battery
+# galahad-train-battery (0.9.0)
 Python program for training linguistic annotation taggers based on a configuration file and list of datasets. It prepares the resulting trained models for dockerization and adds relevant metadata. It is tagger software agnostic as long as a simple Python shell is built around it.
 
 ### GaLAHaD-related Repositories
 - [galahad](https://github.com/INL/galahad)
 - [galahad-train-battery](https://github.com/INL/galahad-train-battery) [you are here]
-- [taggers-dockerized](https://github.com/INL/taggers-dockerized) [to be released]
+- [galahad-taggers-dockerized](https://github.com/INL/galahad-taggers-dockerized) [to be released]
 - [galahad-corpus-data](https://github.com/INL/galahad-corpus-data/)
-- [int-pie](https://github.com/INL/pie) [to be released]
+- [int-pie](https://github.com/INL/int-pie)
 - [int-huggingface-tagger](https://github.com/INL/huggingface-tagger) [to be released]
 
 # Setup
