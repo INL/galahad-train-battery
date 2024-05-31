@@ -163,7 +163,7 @@ def run_tagger(
             f"No existing virtual environment was found for tagger [{tagger_name}]. Creating one."
         )
         os.system(f"python3 -m venv {venv_path}")
-        os.system(f"{activate_venv}; sh {tagger_dir} requirements.sh")
+        os.system(f"{activate_venv} && cd {tagger_dir} && sh requirements.sh")
     # Create log folder
     if not os.path.exists(LOGS):
         os.makedirs(LOGS)
