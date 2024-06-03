@@ -1,9 +1,8 @@
 {
-    "name": "14-16",
+    "name": "1400-1600",
     "datasets": [
         "dbnl-excerpts-15",
         "dbnl-excerpts-16",
-        "dictionary-quotations-14",
         "dictionary-quotations-15",
         "dictionary-quotations-16",
         "clvn"
