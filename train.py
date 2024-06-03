@@ -110,9 +110,8 @@ def create_docker_from_prefab(folder_name: str) -> str:
     shutil.copy(dataset_config_path, docker_path)
     # Update datasets.json with the provenance info from the datasets.json in the root folder
     add_dataset_provenance(docker_path)
-    # Copy prefab folder
-    if not os.path.exists(docker_path):
-        shutil.copytree(f"{PREFABS}/{tagger_name}", docker_path)
+    # Copy prefab last folder, so it can overwrite the json files if desired.
+    shutil.copytree(f"{PREFABS}/{tagger_name}", docker_path)
     return docker_path
 
 
