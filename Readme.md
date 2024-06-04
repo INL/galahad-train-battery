@@ -4,7 +4,7 @@ Python program for training linguistic annotation taggers based on a configurati
 ### GaLAHaD-related Repositories
 - [galahad](https://github.com/INL/galahad)
 - [galahad-train-battery](https://github.com/INL/galahad-train-battery) [you are here]
-- [galahad-taggers-dockerized](https://github.com/INL/galahad-taggers-dockerized) [to be released]
+- [galahad-taggers-dockerized](https://github.com/INL/galahad-taggers-dockerized)
 - [galahad-corpus-data](https://github.com/INL/galahad-corpus-data/)
 - [int-pie](https://github.com/INL/int-pie)
 - [int-huggingface-tagger](https://github.com/INL/huggingface-tagger) [to be released]
