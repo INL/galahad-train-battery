@@ -1,0 +1,17 @@
+{
+    "name": "1600-1900",
+    "datasets": [
+        "dbnl-excerpts-17",
+        "dbnl-excerpts-18",
+        "dbnl-excerpts-19",
+        "dictionary-quotations-17",
+        "dictionary-quotations-18",
+        "dictionary-quotations-19",
+        "couranten",
+        "letters-as-loot"
+    ],
+    "tagset": "TDN-Core",
+    "version": "1.0",
+    "eraFrom": "1600",
+    "eraTo": "1900"
+}

@@ -1,0 +1,14 @@
+{
+    "name": "1400-1600",
+    "datasets": [
+        "dbnl-excerpts-15",
+        "dbnl-excerpts-16",
+        "dictionary-quotations-15",
+        "dictionary-quotations-16",
+        "clvn"
+    ],
+    "tagset": "TDN-Core",
+    "version": "1.0",
+    "eraFrom": "1400",
+    "eraTo": "1600"
+}

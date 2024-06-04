@@ -1,4 +1,4 @@
-# galahad-train-battery (0.9.1)
+# galahad-train-battery (1.0.0)
 Python program for training linguistic annotation taggers based on a configuration file and list of datasets. It prepares the resulting trained models for dockerization and adds relevant metadata. It is tagger software agnostic as long as a simple Python shell is built around it.
 
 ### GaLAHaD-related Repositories
