@@ -1,20 +1,18 @@
 {
     "@context": "https://w3id.org/codemeta/3.0",
     "@type": "SoftwareSourceCode",
-    "version": "1.0.0",
-    "dateModified": "2024-06-04",
     "dateCreated": "2024-05-31",
     "datePublished": "2024-05-31",
     "applicationCategory": [
         "https://w3id.org/nwo-research-fields#Linguistics",
         "https://w3id.org/nwo-research-fields#ComputationalLinguisticsAndPhilology",
-        "https://w3id.org/nwo-research-fields#ArtificialIntelligenceExpertSystems"
+        "https://w3id.org/nwo-research-fields#ArtificialIntelligenceExpertSystems",
+        "https://vocabs.dariah.eu/tadirah/machineLearning"
     ],
     "author": [
         {
             "@type": "Person",
             "@id": "http://orcid.org/0009-0006-9941-9582",
-            "type": "Person",
             "email": "vincent.prins@ivdnt.org",
             "familyName": "Prins",
             "givenName": "Vincent"
