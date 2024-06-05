@@ -54,7 +54,7 @@
         "url": "https://www.ivdnt.org"
     },
     "issueTracker": "https://github.com/INL/galahad-train-battery/issues",
-    "readme": "https://github.com/INL/galahad-train-battery/blob/master/Readme.md",
+    "readme": "https://github.com/INL/galahad-train-battery/blob/release/Readme.md",
     "releaseNotes": "https://github.com/INL/galahad-train-battery/releases",
     "targetProduct": [
         {
