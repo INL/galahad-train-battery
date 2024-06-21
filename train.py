@@ -137,7 +137,7 @@ def add_dataset_provenance(docker_path: str) -> None:
                 result["datasets"].append({"name": dataset, "version": "unknown"})
 
     with open(f"{docker_path}/datasets.json", "w") as docker_file:
-        json.dump(result, docker_file)
+        json.dump(result, docker_file, indent=4)
 
 
 def run_tagger(
