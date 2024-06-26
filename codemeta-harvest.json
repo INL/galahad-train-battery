@@ -58,13 +58,13 @@
     "releaseNotes": "https://github.com/INL/galahad-train-battery/releases",
     "targetProduct": [
         {
-            "@type": "ConsoleApplication",
+            "@type": "CommandLineApplication",
             "name": "GaLAHaD Train Battery - Trainer",
             "provider": "https://www.ivdnt.org",
             "executableName": "train"
         },
         {
-            "@type": "ConsoleApplication",
+            "@type": "CommandLineApplication",
             "name": "GaLAHaD Train Battery - Dockerizer",
             "provider": "https://www.ivdnt.org",
             "executableName": "docker-build"
