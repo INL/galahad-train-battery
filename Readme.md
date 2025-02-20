@@ -4,18 +4,26 @@ Python program for training linguistic annotation taggers based on a configurati
 ### GaLAHaD-related Repositories
 - [galahad](https://github.com/INL/galahad)
 - [galahad-train-battery](https://github.com/INL/galahad-train-battery) [you are here]
-- [galahad-taggers-dockerized](https://github.com/INL/galahad-taggers-dockerized) [to be released]
+- [galahad-taggers-dockerized](https://github.com/INL/galahad-taggers-dockerized)
 - [galahad-corpus-data](https://github.com/INL/galahad-corpus-data/)
 - [int-pie](https://github.com/INL/int-pie)
-- [int-huggingface-tagger](https://github.com/INL/huggingface-tagger) [to be released]
+- [int-huggingface-tagger](https://github.com/INL/int-huggingface-tagger)
+- [galahad-huggingface-models](https://github.com/INL/galahad-huggingface-models)
 
 # Setup
-1. `git clone --recurse-submodules https://github.com/INL/galahad-train-battery`
-2. Run `unzip-and-clean-corpus.sh`
-3. Run `train.py` (see usage below).
+1. `git clone https://github.com/INL/galahad-train-battery`
+2. `cd galahad-train-battery`
+3. `git clone https://github.com/INL/galahad-corpus-data`
+4. And for each tagger you want to use (e.g.: pie): 
+    1. `cd taggers/pie`
+    2. `git clone https://github.com/INL/int-pie pie`
+5. `cd` back to the repo root. 
+6. Run `train.py [arguments]` (see usage below).
 
 # How to use
-Running `python3 train.py` trains all configs found in `configs/`. To train a specific config, supply its directory name relative to `configs/`. E.g. `python3 train.py pie/tdn`, or supply multiple. Once trained, the models will appear in the `galahad-taggers-dockerized/` folder. `docker-build.py` builds all models to images. Optionally, supply one or more specific configurations as an argument: `python3 docker-build.py pie/tdn`.
+Running `python3 train.py` trains all configs found in `configs/`. To train a specific config, supply its directory name relative to `configs/`. E.g. `python3 train.py pie/tdn`, or supply multiple. Once trained, the models will appear in the `galahad-taggers-dockerized/` folder. 
+
+`docker-build.py` builds all models to images. Optionally, supply one or more specific configurations as an argument: `python3 docker-build.py pie/tdn`.
 
 ## Configurations
 The first level of folders in `configs/` dictates what tagger is used. A tagger with *the same* directory name must exist in `taggers/`. The second level of folders correspond to models: each configuration will train a single model. A config folder contains a `datasets.json` and `config.json` file. The format of `datasets.json` is:
@@ -26,11 +34,15 @@ The first level of folders in `configs/` dictates what tagger is used. A tagger 
 }
 ```
 
-Dataset names (e.g. `my-first-dataset`) must correspond to a folder in `galahad-corpus-data/training-data` (e.g. `galahad-corpus-data/training-data/my-first-dataset/`). When multiple datasets are specified, they will be merged automatically. The format of `config.json` is up to the specific tagger and can be used to set parameters such as learning rate.
+Dataset names (e.g. `my-first-dataset`) must correspond to a folder in `galahad-corpus-data/training-data` (e.g. `galahad-corpus-data/training-data/my-first-dataset/`). When multiple datasets are specified, they will be merged automatically. 
+
+The format of `config.json` is up to the specific tagger and can be used to set parameters such as learning rate.
 
 ## Datasets
 Each folder in `galahad-corpus-data/training-data` contains one dataset, pre-split in train, dev and test. A dataset must have three files that end in `*train.tsv`, `*dev.tsv` and `*test.tsv` respectively. If multiple matching files exist, the first is chosen. 
+
 To support the merging of datasets, tsv files **cannot** have headers. That does mean that only datasets with the same column order should be merged, so pay attention to this when selecting datasets to merge. 
+
 Tsv files are expected to have the same number of tabs (`\t`) on each line. This is especially important for taggers that read the first line to determine the number of columns.
 
 See the [galahad-corpus-data repository](https://github.com/INL/galahad-corpus-data/) for more information on the datasets.
@@ -51,7 +63,7 @@ When you run `train.py`, it:
 7. calls `taggers/[tagger-name]/train.py` from the venv with 4 console arguments (see below).
 8. Lastly, the tagger and its own `train.py` are now expected to produce a model at `galahad-taggers-dockerized/[tagger-name]`.
 
-## Why .sh instead of pip -r requirements.txt?
+### Why .sh instead of pip -r requirements.txt?
 Use of `--no-deps` is not yet supported for requirements.txt (see https://github.com/pypa/pip/pull/10837). Some taggers need to install packages with `--no-deps`. This is a workaround.
 If you don't need this, your `requirements.sh` can be as simple as:
 ```sh
