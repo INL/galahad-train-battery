@@ -127,9 +127,9 @@ def add_dataset_provenance(docker_path: str) -> None:
     with open(f"{corpora_folder}/datasets.json") as provenance_file:
         provenance: list = json.load(provenance_file)
         for dataset in datasets:
-            # find object in list that matches trainingpath
+            # find object in list that matches path
             matching = [
-                i for i in provenance if i["trainingPath"].split("/")[-1] == dataset
+                i for i in provenance if i["path"].split("/")[-1] == dataset
             ]
             if matching:
                 result["datasets"].append(matching[0])
