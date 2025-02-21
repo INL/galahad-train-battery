@@ -167,13 +167,12 @@ def run_tagger(
     if not os.path.exists(LOGS):
         os.makedirs(LOGS)
     # Run tagger
-    print(
-        f"Training tagger [{tagger_name}] with config [{config_name}]... (this will take a while)"
-    )
     # Note the -u to ensure flushing
     start_train_py = f"python3 -u {TAGGERS}/{tagger_name}/train.py {train_set_path} {dev_set_path} {config_path} {docker_path}"
     start_time = int(time.time())
     log_path = f"{LOGS}/{config_name}-{start_time}.txt"
+    print(f"Training tagger [{tagger_name}] with config [{config_name}]... (this will take a while)")
+    print(f"To follow the progress, run: tail -f {log_path}")
     os.system(f"{activate_venv} && {start_train_py} > {log_path} 2>&1")
 
 
