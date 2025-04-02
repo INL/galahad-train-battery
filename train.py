@@ -128,9 +128,7 @@ def add_dataset_provenance(docker_path: str) -> None:
         provenance: list = json.load(provenance_file)
         for dataset in datasets:
             # find object in list that matches path
-            matching = [
-                i for i in provenance if i["path"].split("/")[-1] == dataset
-            ]
+            matching = [i for i in provenance if i["path"].split("/")[-1] == dataset]
             if matching:
                 result["datasets"].append(matching[0])
             else:
@@ -171,7 +169,9 @@ def run_tagger(
     start_train_py = f"python3 -u {TAGGERS}/{tagger_name}/train.py {train_set_path} {dev_set_path} {config_path} {docker_path}"
     start_time = int(time.time())
     log_path = f"{LOGS}/{tagger_name}-{config_name}-{start_time}.txt"
-    print(f"Training tagger [{tagger_name}] with config [{config_name}]... (this will take a while)")
+    print(
+        f"Training tagger [{tagger_name}] with config [{config_name}]... (this will take a while)"
+    )
     print(f"To follow the progress, run: tail -f {log_path}")
     # flush print before running
     sys.stdout.flush()
